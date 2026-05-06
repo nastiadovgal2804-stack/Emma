@@ -1,0 +1,453 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #000; /* Темний фон для контрасту */
+}
+
+/* Announcement Bar */
+.announcement-bar {
+    background-color: #FFA07A; /* Колір як на макеті */
+    color: #000;
+    text-align: center;
+    padding: 8px 0;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Header & Hero Background */
+.main-header {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), 
+                url('img/1.png'); /* Шлях до фото дівчини */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navigation Layout */
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #FF6B6B;
+}
+
+.logo-main {
+    font-size: 40px;
+    font-weight: 900;
+    letter-spacing: 5px;
+    line-height: 1;
+}
+
+.logo-sub {
+    font-size: 14px;
+    align-self: flex-end;
+    margin-right: -10px;
+}
+
+.navigation ul {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    list-style: none;
+    margin-top: 10px;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: white;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.arrow {
+    font-size: 10px;
+    vertical-align: middle;
+}
+
+/* Hero Content */
+.hero-section {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding-bottom: 100px; /* Трохи зміщено вгору */
+}
+
+.hero-section h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 64px;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.btn-shop {
+    background: rgba(0, 0, 0, 0.4);
+    color: white;
+    border: 1.5px solid white;
+    padding: 12px 50px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-shop:hover {
+    background: white;
+    color: black;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .navigation ul {
+        display: none; /* Для мобілки зазвичай роблять бургер-меню */
+    }
+    .hero-section h1 {
+        font-size: 36px;
+    }
+}
+
+/* Categories Circles */
+.categories-circles {
+    padding: 60px 0;
+    background: #fff;
+}
+
+.cat-container {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cat-card {
+    text-align: center;
+    cursor: pointer;
+}
+
+.img-wrapper {
+    width: 180px;
+    height: 180px;
+    border-radius: 40px; /* Скруглені кути як на макеті */
+    overflow: hidden;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.whatsapp-bg {
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wa-icon {
+    width: 100% !important;
+    height: auto !important;
+}
+
+.cat-card span {
+    font-size: 14px;
+    font-weight: 700;
+    font-style: italic;
+    letter-spacing: 1px;
+}
+
+/* Shop Section */
+.shop-section {
+    padding: 40px 5%;
+    background: #fff;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 24px;
+    letter-spacing: 3px;
+    margin-bottom: 50px;
+    font-weight: 500;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.product-item {
+    text-align: center;
+}
+
+.product-img-box {
+    position: relative;
+    background: #f9f9f9;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.product-img-box img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+}
+
+/* Color Badge */
+.color-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #000;
+    color: #fff;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    z-index: 2;
+}
+
+.color-badge span {
+    font-size: 8px;
+    font-weight: 400;
+    margin-top: -2px;
+}
+
+.product-name {
+    font-size: 11px;
+    color: #333;
+    margin-bottom: 8px;
+    height: 30px; /* Для вирівнювання тексту */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+}
+
+.product-price {
+    color: #FF6B6B;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* Hover effects */
+.product-item:hover .product-img-box img {
+    transform: scale(1.05);
+    transition: 0.4s ease;
+}
+/* Специфічні стилі для секції Skincare */
+.skincare-section {
+    padding-top: 20px;
+    padding-bottom: 80px;
+}
+
+/* Деякі продукти мають вищі флакони, тому налаштуємо контейнер */
+.tall-img img {
+    max-height: 85%; /* Трохи більше простору для вертикальних туб */
+    width: auto;
+}
+
+/* Pagination Styles */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 60px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border: 1px solid #FFB7A1;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background-color: #FFB7A1;
+}
+
+.dot:hover {
+    background-color: #FFD8CC;
+}
+
+/* Адаптивність для сітки */
+@media (max-width: 992px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+    .section-title {
+        font-size: 20px;
+    }
+}
+
+.main-footer {
+    background-color: #FDF1C7; /* Світло-жовтий фон як на макеті */
+    padding: 60px 5% 30px;
+    color: #FFB7A1; /* Колір тексту заголовків */
+}
+
+/* Логотип у футері */
+.footer-logo-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-col h4 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.footer-col p {
+    font-size: 12px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #d4a394; /* Трохи темніший для читабельності */
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col a {
+    text-decoration: none;
+    color: #d4a394;
+    font-size: 12px;
+    transition: 0.3s;
+}
+
+.footer-col a:hover {
+    color: #FF6B6B;
+}
+
+/* Форма підписки */
+.subscribe-form {
+    display: flex;
+    border: 1px solid #FFB7A1;
+    max-width: 350px;
+}
+
+.subscribe-form input {
+    background: transparent;
+    border: none;
+    padding: 12px 15px;
+    flex-grow: 1;
+    font-size: 12px;
+    color: #d4a394;
+    outline: none;
+}
+
+.subscribe-form input::placeholder {
+    color: #FFB7A1;
+}
+
+.subscribe-form button {
+    background-color: #FFB7A1;
+    border: none;
+    color: #FF6B6B;
+    padding: 0 25px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.subscribe-form button:hover {
+    background-color: #fca88d;
+}
+
+/* Нижня частина */
+.footer-bottom {
+    margin-top: 80px;
+    border-top: 0.5px solid rgba(255, 183, 161, 0.3);
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.copyright {
+    font-size: 11px;
+    color: #FFB7A1;
+}
+
+.payment-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.payment-icons img {
+    height: 20px;
+    width: auto;
+    filter: grayscale(0.2); /* Щоб іконки не були занадто яскравими */
+}
+
+/* Адаптивність */
+@media (max-width: 992px) {
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+    }
+    .footer-bottom {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+}
